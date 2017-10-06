@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Введение в текстурирование</title>
+        <meta charset="utf-8">
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/three.min.js" type="text/javascript"></script>
+		<script src="../js/gl-matrix-min.js" type="text/javascript"></script>
+        <script src="js/texturing.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="../index.html">Дегтярев Данил | Компьютерная геометрия и графика</a>
+                </div>
+            </div>
+        </nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
+            <li class="breadcrumb-item"><a href="lab6.html">Лабораторная 6</a></li>
+            <li class="breadcrumb-item active">Введение в текстурирование</li>
+        </ol>
+        <div class="container">
+            <h1>Введение в текстурирование</h1>
+				<canvas id="canvas3D" width="400" height="300">Ваш браузер не поддерживает элемент canvas</canvas>
+			<h1>Пример не работает, так как изображение-текстура должна находиться на сервере.</h1>
+			<h1>Источник: http://javascript.ru/forum/dom-window/46546-three-js-problema-s-nalozheniem-tekstury.html</h1>
+			<h1>Ниже представлен скриншот этой странички, которая была загружена на локальный сервер WampServer</h1>
+			<img src="image/error.png">
+		</div>			
+			
+			<script id="shader-fs" type="x-shader/x-fragment">
+			precision highp float;
+			uniform sampler2D uSampler;
+			varying vec2 vTextureCoords;
+			 
+			  void main(void) {
+				gl_FragColor = texture2D(uSampler, vTextureCoords);
+			  }
+			</script>
+			 
+			<script id="shader-vs" type="x-shader/x-vertex">
+			attribute vec3 aVertexPosition;
+			varying vec2 vTextureCoords;
+			 
+			  void main(void) {
+				gl_Position = vec4(aVertexPosition, 1.0);
+				vTextureCoords = vec2(aVertexPosition.x+0.5,aVertexPosition.y+0.5);
+			  }
+			</script>
+			
+		
+    </body>
+</html>
