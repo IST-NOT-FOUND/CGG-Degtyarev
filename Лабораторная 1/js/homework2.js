@@ -3,8 +3,7 @@ window.onload = function () {init();};
     var geometry, material, mesh;
 	var Animated = false;
 	var request;
-	mesh.rotation.x = 0;
-		mesh.rotation.y=0;
+	
     
     
     // base value init
@@ -58,11 +57,13 @@ window.onload = function () {init();};
 
 	function accelerate() {
 		if (Animated) {
-			if((mesh.rotation.x>0.01)||(mesh.rotation.y>0.02)){
+			if((mesh.rotation.x>0)||(mesh.rotation.y>0)){
 				requestAnimationFrame(accelerate);
 				mesh.rotation.x += 0.01;
 				mesh.rotation.y += 0.02;
 				renderer.render(scene, camera);
+				console.log(mesh.rotation.x);
+				console.log(mesh.rotation.y);
 			}
 			
 			
@@ -75,13 +76,15 @@ window.onload = function () {init();};
 	function decelerate() {
 		if (Animated) {
 			if((mesh.rotation.x>0)||(mesh.rotation.x>0))
-			{			
+			{
 			
 			requestAnimationFrame(decelerate);
 			mesh.rotation.x -= 0.01;
 			mesh.rotation.y -= 0.02;			
 			renderer.render(scene, camera);
-			}
+			console.log(mesh.rotation.x);
+			console.log(mesh.rotation.y);
+				}		
 			
 			
 		}

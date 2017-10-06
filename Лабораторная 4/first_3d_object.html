@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Индивидуальное задание 2</title>
+        <title>Первый 3D-объект</title>
         <meta charset="utf-8">
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../js/three.min.js" type="text/javascript"></script>
-        <script src="js/homework2.js" type="text/javascript"></script>
+        <script src="js/first_3d_object.js" type="text/javascript"></script>
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -19,30 +19,17 @@
         </nav>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
-            <li class="breadcrumb-item"><a href="lab1.html">Лабораторная 1</a></li>
-            <li class="breadcrumb-item active">Индивидуальное задание 2</li>
+            <li class="breadcrumb-item"><a href="lab4.html">Лабораторная 4</a></li>
+            <li class="breadcrumb-item active">Первый 3D-объект</li>
         </ol>
         <div class="container">
-            <div class="row">
-                <div class="col-xs-8">
-                    <h1>Индивидуальное задание 2</h1>
-                </div>
-                <div class="col-xs-8 text-right">
-                    <h1>
-                        <a onclick="animation()" id="btnAnimation" class="btn btn-success">Старт</a>
-                        <a onclick="accelerate()" id="btnAccelerate" class="btn btn-success">Ускорить</a>
-						<a onclick="decelerate()" id="btnDecelerate" class="btn btn-success">Замедлить или вернуть в исходное значение</a>
-                    </h1>
-					
-                </div>
-            </div>
-            <div class="canvas"></div>
-        </div>
-			<!-- фрагментный шейдер -->
+            <h1>Первый 3D-объект</h1>
+				<canvas id="canvas3D" width="400" height="300">Ваш браузер не поддерживает элемент canvas</canvas>
+		</div>
 			<script id="shader-fs" type="x-shader/x-fragment">
-			  void main(void) {
-				gl_FragColor = vec4(1, 0, 0.0, 0.0);
-			  }
+			 void main(void) {
+				gl_FragColor = vec4(1.0, 0.0, 0.5, 1.0);
+			 }
 			</script>
 			<!-- вершинный шейдер -->
 			<script id="shader-vs" type="x-shader/x-vertex">
@@ -51,7 +38,6 @@
 				gl_Position = vec4(aVertexPosition, 1.0);
 			  }
 			</script>
-			
 		
     </body>
 </html>
