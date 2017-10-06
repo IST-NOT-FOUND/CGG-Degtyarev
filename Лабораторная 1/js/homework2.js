@@ -17,9 +17,9 @@ window.onload = function () {init();};
         scene = new THREE.Scene();
         // настройка геометрии - в качестве геометрии будет куб
         // настроим его ширину, высоту и длину по оси z
-        geometry = new THREE.CubeGeometry(400, 200, 100);
+        geometry = new THREE.CubeGeometry(400, 200, 300);
         // настройка материала - установка цвета
-        material = new THREE.MeshBasicMaterial({color: 0x0000088, wireframe: false});
+        material = new THREE.MeshBasicMaterial({color: 0x0000088, wireframe: true});
         // настраиваем меш, который будет отображать куб
         mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
@@ -58,7 +58,7 @@ window.onload = function () {init();};
 
 	function accelerate() {
 		if (Animated) {
-			if((mesh.rotation.x>0)||(mesh.rotation.y>0)){
+			if((mesh.rotation.x>0.01)||(mesh.rotation.y>0.02)){
 				requestAnimationFrame(accelerate);
 				mesh.rotation.x += 0.01;
 				mesh.rotation.y += 0.02;
