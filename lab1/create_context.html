@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Настройка буфера вершин и буфер индексов</title>
+        <title>Создание контекста</title>
         <meta charset="utf-8">
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         
@@ -17,15 +17,16 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
             <li class="breadcrumb-item"><a href="lab1.html">Лабораторная 1</a></li>
-            <li class="breadcrumb-item active">Настройка буфера вершин и буфер индексов</li>
+            <li class="breadcrumb-item active">Создание контекста</li>
         </ol>
         <div class="container">
-            <h1>Настройка буфера вершин и буфер индексов</h1>
+            <h1>Создание контекста</h1>
 				<canvas id="canvas3D" width="400" height="300">Ваш браузер не поддерживает элемент canvas</canvas>
 		</div>
+			<!-- фрагментный шейдер -->
 			<script id="shader-fs" type="x-shader/x-fragment">
 			  void main(void) {
-				gl_FragColor = vec4(1.0, 0.0, 0.4, 1.0);
+				gl_FragColor = vec4(1, 0, 0.0, 0.0);
 			  }
 			</script>
 			<!-- вершинный шейдер -->
@@ -35,10 +36,10 @@
 				gl_Position = vec4(aVertexPosition, 1.0);
 			  }
 			</script>
-			
 		<script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         
-        <script src="../js/lab1/buffer.js" type="text/javascript"></script>
+        <script src="../js/lab1/create_context.js" type="text/javascript"></script>	
+		
     </body>
 </html>

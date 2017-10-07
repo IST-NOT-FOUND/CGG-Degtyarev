@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Создание контекста</title>
+        <title>Первая программа на WebGL - 3D shape</title>
         <meta charset="utf-8">
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         
@@ -17,16 +17,16 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
             <li class="breadcrumb-item"><a href="lab1.html">Лабораторная 1</a></li>
-            <li class="breadcrumb-item active">Создание контекста</li>
+            <li class="breadcrumb-item active">Первая программа на WebGL - 3D shape</li>
         </ol>
         <div class="container">
-            <h1>Создание контекста</h1>
+            <h1>Первая программа на WebGL - 3D shape</h1>
 				<canvas id="canvas3D" width="400" height="300">Ваш браузер не поддерживает элемент canvas</canvas>
 		</div>
 			<!-- фрагментный шейдер -->
 			<script id="shader-fs" type="x-shader/x-fragment">
 			  void main(void) {
-				gl_FragColor = vec4(1, 0, 0.0, 0.0);
+				gl_FragColor = vec4(0, 0, 0.0, 0.0);
 			  }
 			</script>
 			<!-- вершинный шейдер -->
@@ -38,8 +38,8 @@
 			</script>
 		<script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
-        
-        <script src="../js/lab1/context.js" type="text/javascript"></script>	
+        <script src="../js/three.min.js" type="text/javascript"></script>
+        <script src="../js/lab1/first_program_3d_shape.js" type="text/javascript"></script>
 		
     </body>
 </html>
