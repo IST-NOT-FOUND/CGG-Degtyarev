@@ -1,1 +1,8 @@
 .vscode/*
+js/bootstrap*
+js/gl-matrix-min.js
+js/jquery-3.2.1.min.js
+js/npm.js
+js/three.min.js
+css/*
+fonts/*
