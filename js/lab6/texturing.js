@@ -94,7 +94,7 @@ function setTextures(){
         setupWebGL();
         draw(); 
     }
-    image.src = "http://localhost/%D0%9B%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F%206/image/test.jpeg";
+    image.src = "../../image/texturing.jpeg";
      
     shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
     gl.uniform1i(shaderProgram.samplerUniform, 0);
