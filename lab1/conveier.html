@@ -3,7 +3,9 @@
     <head>
         <title>Конвейер WebGL</title>
         <meta charset="utf-8">
+		<link href="../css/canvas_style.css" rel="stylesheet" type="text/css"/>
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		
         
     </head>
     <body>
@@ -21,7 +23,7 @@
         </ol>
         <div class="container">
             <h1>Конвейер WebGL</h1>
-				<canvas id="canvas3D" width="400" height="300">Ваш браузер не поддерживает элемент canvas</canvas>
+				<canvas id="canvas3D">Ваш браузер не поддерживает элемент canvas</canvas>
 		</div>
 			<script id="shader-fs" type="x-shader/x-fragment">
 			  void main(void) {
@@ -37,7 +39,8 @@
 			</script>
 			
 		<script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.min.js" type="text/javascript"></script>        
+        <script src="../js/bootstrap.min.js" type="text/javascript"></script> 
+		<script src="../js/canvas_style.js" type="text/javascript"></script>
         <script src="../js/lab1/conveier.js" type="text/javascript"></script>
     </body>
 </html>
