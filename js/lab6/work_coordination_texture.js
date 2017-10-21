@@ -113,7 +113,7 @@ function setTextures(){
         handleTextureLoaded(image, texture);    
   }
    
-   image.src = "image/test.jpeg";
+   image.src = "../../image/texturing.jpeg";
  
     shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
     gl.uniform1i(shaderProgram.samplerUniform, 0);
