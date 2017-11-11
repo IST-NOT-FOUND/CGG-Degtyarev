@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Текстурирование 3D-объектов</title>
+        <title>Создание освещенного объекта по модели Фонга. Шейдеры</title>
         <meta charset="utf-8">
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         
@@ -17,10 +17,10 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="../index.html">Главная</a></li>
             <li class="breadcrumb-item"><a href="lab7.html">Лабораторная 7</a></li>
-            <li class="breadcrumb-item active">Текстурирование 3D-объектов</li>
+            <li class="breadcrumb-item active">Создание освещенного объекта по модели Фонга. Шейдеры</li>
         </ol>
         <div class="container">
-            <h1>Текстурирование 3D-объектов</h1>
+            <h1>Создание освещенного объекта по модели Фонга. Шейдеры</h1>
 				<canvas id="canvas3D">Ваш браузер не поддерживает элемент canvas</canvas>
 			
 		</div>			
@@ -28,6 +28,7 @@
 			<script id="shader-vs" type="x-shader/x-vertex">
 			  attribute vec3 aVertexPosition;
 			  attribute vec3 aVertexNormal;
+			  attribute vec2 aVertexTextureCoords;
 			 
 			  uniform mat4 uMVMatrix;
 			  uniform mat4 uPMatrix;
@@ -38,10 +39,7 @@
 			  uniform vec3 uDiffuseLightColor;
 			  uniform vec3 uSpecularLightColor;
 			   
-			  uniform vec3 uAmbientMaterialColor;
-			  uniform vec3 uDiffuseMaterialColor;
-			  uniform vec3 uSpecularMaterialColor;
-			 
+			  varying vec2 vTextureCoords;
 			  varying vec3 vLightWeighting;
 			   
 			  const float shininess = 16.0;
@@ -53,10 +51,11 @@
 			   
 				// получаем вектор направления света
 				vec3 lightDirection = normalize(uLightPosition - vertexPositionEye3);
+				 
 				// получаем нормаль
 				vec3 normal = normalize(uNMatrix * aVertexNormal);
 				 
-				 // получаем скалярное произведение векторов нормали и направления света
+				// получаем скалярное произведение векторов нормали и направления света
 				float diffuseLightDot = max(dot(normal, lightDirection), 0.0);
 													
 				// получаем вектор отраженного луча и нормализуем его
@@ -70,23 +69,26 @@
 				float specularLightParam = pow(specularLightDot, shininess);
 			 
 				// отраженный свет равен сумме фонового, диффузного и зеркального отражений света
-			   vLightWeighting = uAmbientMaterialColor * uAmbientLightColor + 
-									uDiffuseMaterialColor * uDiffuseLightColor * diffuseLightDot +
-									uSpecularMaterialColor * uSpecularLightColor * specularLightParam;
+				vLightWeighting = uAmbientLightColor + uDiffuseLightColor * diffuseLightDot +
+								  uSpecularLightColor * specularLightParam;
 				 
+				 // Finally transform the geometry
 				 gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+				 vTextureCoords = aVertexTextureCoords;  
 			  }                
 			</script>
 			 
 			<script id="shader-fs" type="x-shader/x-fragment">
 			  precision mediump float;
-			   
+   
+			  varying vec2 vTextureCoords;
 			  varying vec3 vLightWeighting;
+			  uniform sampler2D uSampler;
 			   
-			  void main() { 
-				gl_FragColor = vec4(vLightWeighting.rgb, 1);
-				
-			  } 
+			  void main() {   
+				vec4 texelColor = texture2D(uSampler, vTextureCoords);
+				gl_FragColor = vec4(vLightWeighting.rgb * texelColor.rgb, texelColor.a);
+			  }  
 			</script>
 		<script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
