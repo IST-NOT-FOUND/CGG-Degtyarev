@@ -4,6 +4,7 @@
         <title>Индивидуальное задание 3</title>
         <meta charset="utf-8">
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
         
     </head>
     <body>
@@ -21,8 +22,10 @@
         </ol>
         <div class="container">
             <h1>Индивидуальное задание</h1>
-			<p><h4>Задание: </h4>Добавить слайдер для плавного изменения цвета каждой вершины треугольника на цвет соседней вершины</p>
-				<canvas id="canvas3D">Ваш браузер не поддерживает элемент canvas</canvas>
+            <p><h4>Задание: </h4>Добавить слайдер для плавного изменения цвета каждой вершины треугольника на цвет соседней вершины</p>
+            <p><input id="slider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/></p>
+                <canvas id="canvas3D">Ваш браузер не поддерживает элемент canvas</canvas>
+                
         </div>
         <script id="shader-fs" type="x-shader/x-fragment">
 			varying highp vec4 vColor;
