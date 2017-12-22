@@ -86,6 +86,7 @@ function setTextures(){
     texture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, texture);
      var image = new Image();
+     image.src = "../../image/texturing.jpeg";
   
     image.onload = function() {
      
@@ -94,7 +95,7 @@ function setTextures(){
         setupWebGL();
         draw(); 
     }
-    image.src = "../../image/texturing.jpeg";
+    
      
     shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
     gl.uniform1i(shaderProgram.samplerUniform, 0);
