@@ -25,7 +25,7 @@ js/*                | JS скрипты проекта и глав
 image/*             | Изображения и текстуры для проекта
 
 #### Структура проекта
-|--html
+>html
 |   |-individual task
 |   |-lab1
 |   |-lab2
@@ -34,7 +34,7 @@ image/*             | Изображения и текстуры для прое
 |   |-lab5
 |   |-lab6
 |   |-lab7
-|--js
+>js
 |   |-individual task
 |   |-lab1
 |   |-lab2
@@ -51,9 +51,9 @@ image/*             | Изображения и текстуры для прое
 |   |-gl-matrix-min.js
 |   |-jquery-3.2.1.min.js
 |   |-three.min.js
-|--image
-|--fonts
-|--css
+>image
+>fonts
+>css
 |   |-individual task
 |   |-bootstrap.css
 |   |-bootstrap.css.map
@@ -63,5 +63,5 @@ image/*             | Изображения и текстуры для прое
 |   |-bootstrap-theme.css
 |   |-bootstap-theme.css.map
 |   |-bootstap-theme.min.css
-|--index.html
-|--.gitignore
+>index.html
+>.gitignore
