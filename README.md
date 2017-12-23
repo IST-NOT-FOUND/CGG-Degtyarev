@@ -18,8 +18,50 @@
 --------------------|----------------------
 index.html          | Стартовая страница (главное меню)
 .gitignore          | Текстовый файл, содержащий ссылки на игрорируемые git-ом файлы
-lab1-lab7/*         | html файлы, страницы с главами
+html/*              | html файлы, страницы с главами
 css/*               | Стили проекта
 fonts/*             | Шрифты проекта
 js/*                | JS скрипты проекта и глав
 image/*             | Изображения и текстуры для проекта
+
+#### Структура проекта
+|--html
+|   |-individual task
+|   |-lab1
+|   |-lab2
+|   |-lab3
+|   |-lab4
+|   |-lab5
+|   |-lab6
+|   |-lab7
+|--js
+|   |-individual task
+|   |-lab1
+|   |-lab2
+|   |-lab3
+|   |-lab4
+|   |-lab5
+|   |-lab6
+|   |-lab7 |
+|   |-bootstap.js
+|   |-bootstap.min.js
+|   |-bootstrap-slider.js
+|   |-bootstrap-slider.min.js
+|   |-canvas_style.js
+|   |-gl-matrix-min.js
+|   |-jquery-3.2.1.min.js
+|   |-three.min.js
+|--image
+|--fonts
+|--css
+|   |-individual task
+|   |-bootstrap.css
+|   |-bootstrap.css.map
+|   |-bootstrap.min.css
+|   |-bootstrap-slider.css
+|   |-bootstrap-slider.min.css
+|   |-bootstrap-theme.css
+|   |-bootstap-theme.css.map
+|   |-bootstap-theme.min.css
+|--index.html
+|--.gitignore
