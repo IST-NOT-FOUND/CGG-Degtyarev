@@ -23,3 +23,7 @@ css/*               | Стили проекта
 fonts/*             | Шрифты проекта
 js/*                | JS скрипты проекта и глав
 image/*             | Изображения и текстуры для проекта
+
+Все библиотеки хранятся в папке js
+
+Cсылка на bootstap-slider [`github`](https://github.com/seiyria/bootstrap-slider)
